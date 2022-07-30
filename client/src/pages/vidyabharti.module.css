@@ -1,0 +1,7 @@
+.id_container{
+    height: 100vh;
+    width: 83%;
+    overflow-y: scroll;
+    margin: auto;
+    padding: 0em 1em;
+}
