@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { saveAs } from 'file-saver';
 import {API_URI} from '../config'
 import API from "../API";
+import axios from "axios";
 
 const Table = ({ data ,updateData}) => {
     const [show, setShow] = useState(false);
@@ -19,7 +20,7 @@ const Table = ({ data ,updateData}) => {
     }
     const deleteCard = async(id)=>{
         if(window.confirm("Do you Want to Delete?")){
-            const res = (await API.delete(`/student/${id}`)).data
+            const res = (await axios.delete(`/student/${id}`)).data
             updateData()
         }
     }
@@ -36,7 +37,7 @@ const Table = ({ data ,updateData}) => {
                 </thead>
                 <tbody>
                     {data?.map((item, i) => (
-                        <tr>
+                        <tr key={i+1}>
                             <th scope="row">{i + 1}</th>
                             <td>{item.fullname}</td>
                             <td>{item.Class}</td>

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import API from "../API";
 import Table from "../components/Table";
@@ -7,9 +8,10 @@ import styles from './vidyabharti.module.css'
 const VidyaBharti = () => {
     const [students, setStudents] = useState([]);
     const [change, setChange] = useState(false);
+
     useEffect(() => {
         async function fetchStudents() {
-            const data = (await API.get("/student")).data.data;
+            const data = (await axios.get("/student")).data.data;
             console.log(data);
             setStudents(data.reverse());
         }
@@ -23,6 +25,10 @@ const VidyaBharti = () => {
         <>
             <div className="container my-4">
                 <Create updateData={updateData} />
+                <p>
+
+                {/* {d&& d} */}
+                </p>
             </div>
             <div className={styles.id_container}>
                 <Table data={students} updateData={updateData} />

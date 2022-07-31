@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import API from "../API";
 
@@ -50,7 +51,7 @@ const Create = ({updateData}) => {
         formData.append('dob',data.dob.toUpperCase())
         formData.append('address',data.address.toUpperCase())
         formData.append('file',image)
-        const res = (await API.post("/student", formData)).data;
+        const res = (await axios.post("/student", formData)).data;
         setData({
             fullname: "",
             father: "",

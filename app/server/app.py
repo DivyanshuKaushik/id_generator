@@ -12,11 +12,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 app.mount("/static", StaticFiles(directory="app/server/static"), name="static")
+
 app.include_router(StudentRouter, tags=["Student"], prefix="/student")
 
 
 @app.get("/", tags=["Root"])
 async def read_root():
     return {"message": "Welcome to this fantastic app!"}
+
