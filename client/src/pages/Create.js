@@ -107,7 +107,7 @@ const Create = ({updateData}) => {
                         </div>
                     </div>
                     <div className="mt-3">
-                        <button type="submit" className="btn btn-primary">
+                        <button type="submit" className="btn btn-sm btn-success">
                             Save
                         </button>
 

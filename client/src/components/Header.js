@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg bg-primary">
             <div className="container-fluid">
-                <NavLink to="/" className="navbar-brand">
+                <NavLink to="/" className="navbar-brand text-light">
                     ID Card Generator
                 </NavLink>
                 <button
@@ -25,7 +25,7 @@ const Header = () => {
                 >
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link active">
+                            <NavLink to="/" className="nav-link active text-light">
                                 Home
                             </NavLink>
                         </li>
@@ -59,7 +59,7 @@ const Header = () => {
                         <li className="nav-item">
                             <NavLink
                                 to="/vidya-bharti"
-                                className="nav-link active"
+                                className="nav-link active text-light"
                             >
                                 Vidya Bharti
                             </NavLink>
